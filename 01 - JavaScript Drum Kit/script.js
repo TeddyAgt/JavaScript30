@@ -1,5 +1,7 @@
-window.addEventListener("keydown", handleKeyDown);
 const keys = document.querySelectorAll(".key");
+
+window.addEventListener("keydown", handleKeyDown);
+keys.forEach((key) => key.addEventListener("transitionend", removeTransision));
 
 function handleKeyDown(e) {
   const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
@@ -11,8 +13,6 @@ function handleKeyDown(e) {
 
   key.classList.add("playing");
 }
-
-keys.forEach((key) => key.addEventListener("transitionend", removeTransision));
 
 function removeTransision(e) {
   this.classList.remove("playing");
