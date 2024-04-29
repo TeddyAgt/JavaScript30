@@ -70,4 +70,6 @@ person4.age = 12;
 console.log(person, person4);
 
 // Things to note - this is only 1 level deep - both for Arrays and Objects.
-// lodash has a cloneDeep method, but you should think twice before using it.
+//  "lodash has a cloneDeep method, but you should think twice before using it.
+
+const person5 = JSON.parse(JSON.stringify(person));
